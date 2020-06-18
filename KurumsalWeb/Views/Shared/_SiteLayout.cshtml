@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - @ViewBag.Kimlik.Title</title>
+    <meta name="description" content="@Html.Raw(ViewBag.Kimlik.Description)" />
+    <meta name="keywords" content="@ViewBag.Kimlik.Keywords" />
+
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                alert($("#html1").html());
+            });
+        });
+        $(document).ready(function () {
+            $("#btn6").click(function () {
+                $("#html1").toggle("slow");
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btn2").click(function () {
+                ($("#html2").text("Kurumsal Web Sitemize Hoşgeldiniz."));
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btn3").click(function () {
+                $("#html3").append(" <h4>Detaylı bilgi için iletişim sayfamızdan bize ulaşın.<h4>");
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn4").click(function () {
+                $("#html3").empty();
+            });
+        });
+     
+    </script>
+    <style>
+        .important {
+            font-weight: bold;
+            font-size: xx-large;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn5").click(function () {
+                $("#html2").addClass("important");
+            });
+        });
+    </script>
+    <!-- css -->
+    <link href="/Content/SiteLayout/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/SiteLayout/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="/Content/SiteLayout/css/jcarousel.css" rel="stylesheet" />
+    <link href="/Content/SiteLayout/css/flexslider.css" rel="stylesheet" />
+    <link href="/Content/SiteLayout/css/style.css" rel="stylesheet" />
+
+    <!-- Theme skin -->
+    <link href="/Content/SiteLayout/skins/default.css" rel="stylesheet" />
+
+    <!-- =======================================================
+    Theme Name: Moderna
+    Theme URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+    ======================================================= -->
+
+</head>
+<body>
+
+
+    <div id="wrapper">
+        <!-- start header -->
+        <header>
+            <div class="navbar navbar-default navbar-static-top">
+
+                <div class="container">
+                    <h4 id="html2">Kurumsal Web</h4> <h4 id="html3"></h4>
+
+                    <div class="navbar-header">
+
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="">@*<span>K</span>urumsalWeb*@<img src="@ViewBag.Kimlik.LogoURL" height="30" width="75" /> @ViewBag.Kimlik.Unvan</a>
+                    </div>
+                    
+                    <div class="navbar-collapse collapse ">
+                        <a id="btn6" style="margin-left:1050px">Göster/Gizle</a>
+                        <ul class="nav navbar-nav" id="html1">
+
+                            <li class="active"><a href="/Home/Index/">Ana Sayfa</a></li>
+
+                            <li><a href="/Home/Hakkimizda/">Hakkımızda</a></li>
+                            <li><a href="/Home/Hizmetlerimiz">Hizmetlerimiz</a></li>
+                            <li><a href="/Home/Blog/">Blog</a></li>
+                            <li><a href="/Home/Iletisim/">İletişim</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Html İşlemleri<b class=" icon-angle-down"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a id="btn1">Görüntüle</a> </li>
+                                    <li><a id="btn2">Düzenle</a> </li>
+                                    <li><a id="btn3">Ekle</a> </li>
+                                    <li><a id="btn4">Sil</a> </li>
+                                    <li><a id="btn5">Stil Ekle</a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- end header -->
+        <div class="container">
+            @RenderBody()
+        </div>
+
+
+
+        @{
+            Html.RenderAction("FooterPartial", "Home");
+        }
+
+
+
+
+    </div>
+
+
+    <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+    <!-- javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/Content/SiteLayout/js/jquery.js"></script>
+    <script src="/Content/SiteLayout/js/jquery.easing.1.3.js"></script>
+    <script src="/Content/SiteLayout/js/bootstrap.min.js"></script>
+    <script src="/Content/SiteLayout/js/jquery.fancybox.pack.js"></script>
+    <script src="/Content/SiteLayout/js/jquery.fancybox-media.js"></script>
+    <script src="/Content/SiteLayout/js/google-code-prettify/prettify.js"></script>
+    <script src="/Content/SiteLayout/js/portfolio/jquery.quicksand.js"></script>
+    <script src="/Content/SiteLayout/js/portfolio/setting.js"></script>
+    <script src="/Content/SiteLayout/js/jquery.flexslider.js"></script>
+    <script src="/Content/SiteLayout/js/animate.js"></script>
+    <script src="/Content/SiteLayout/js/custom.js"></script>
+  
+    <script>
+
+
+    @*<script src="~/Scripts/jquery-3.3.1.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>*@
+    </body>
+</html>
